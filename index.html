@@ -70,6 +70,7 @@
 			<div id='ts-embed' class="embed">
 				<p class="warning">Add embedded content!</p>
 			</div>
+
 			<script type='module'>
 				import {
 				    LiveboardEmbed,
@@ -85,8 +86,8 @@
 
 				const lb = new LiveboardEmbed('#ts-embed', {
 				    frameParams: {},
+					fullHeight: true,
 				    liveboardId: '543619d6-0015-4667-b257-eff547d13a12',
-					vizID: 'b6cddad5-5de2-4041-b463-33ce46232f76',
 				});
 
 				// Do not forget to call render.
