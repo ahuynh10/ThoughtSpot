@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>GAIN A3 - ThoughSpot</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="personalwebsite.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#top">GAIN A3: A Test</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#intro">Intro</a></li>
+					<li><a href="#powerbi">Power BI</a></li>
+					<li><a href="#thoughtspot">ThoughtSpot</a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="#info">Info</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Intro -->
+	<section id="intro">
+		<div class="container-fluid bg-1 text-center">
+			<br><br>
+			<h3 class="margin">GAIN A3: ThoughtSpot</h3>
+			<img src="Data.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Portrait"
+				width="400" height="400">
+			<h3>Welcome to the GAIN A3 website powered by ThoughtSpot!</h3>
+		</div>
+	</section>
+
+	<!-- <hr align=center width=40% style="border-color: #cccccc;"><br> -->
+
+	<!-- Power BI Container -->
+	<section id="powerbi">
+		<div class="container-fluid bg-4 text-center">
+			<h3 class="margin">GAIN Launcher</h3>
+			<iframe title="GAIN Platform Launcher" width="1140" height="800" 
+				src="https://app.powerbi.com/reportEmbed?reportId=69e4f3bb-e8ae-48b8-910b-7f8b1ac0e867&autoAuth=true&ctid=a00de4ec-48a8-43a6-be74-e31274e2060d" frameborder="0" allowFullScreen="true"></iframe>
+		</div>
+	</section>
+
+	<!-- <hr align=center width=40% style="border-color: #cccccc;"><br> -->
+
+	<!-- Reference: https://developers.thoughtspot.com/docs/embed-a-viz -->
+
+	<!-- ThoughtSpot Container -->
+	<section id="thoughtspot">
+		<div class="container-fluid bg-2 text-center">
+			<h3 class="margin">ThoughtSpot</h3><br>
+
+			<div id='ts-embed' class="embed">
+				<p class="warning">Add embedded content!</p>
+			</div>
+			<script type='module'>
+				import {
+				    LiveboardEmbed,
+				    AuthType,
+				    init,
+					prefetch
+				} from 'https://cdn.jsdelivr.net/npm/@thoughtspot/visual-embed-sdk/dist/tsembed.es.js';
+
+				init({
+				    thoughtSpotHost: 'https://try-everywhere.thoughtspot.cloud',
+				    authType: AuthType.None,
+				});
+
+				const lb = new LiveboardEmbed('#ts-embed', {
+				    frameParams: {
+				        width: '100%',
+				        height: '100%',
+				    },
+				    liveboardId: '543619d6-0015-4667-b257-eff547d13a12',
+					vizID: 'b6cddad5-5de2-4041-b463-33ce46232f76',
+				});
+
+				// Do not forget to call render.
+				lb.render();
+			</script>
+
+		</div>
+	</section>
+
+	<!-- More Info Container -->
+	<section id="info">
+		<div class="container-fluid bg-1 text-center">
+			<h3 class="margin">Thanks for using this site!</h3>
+			<p>For more information about GAIN, please visit the official GAIN Home page</p>
+			<br>
+			<a href="https://collaboration.merck.com/sites/GAIN" target="_blank" class="btn btn-success btn-lg">GAIN
+				Home Page</a>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="js/smoothscroll.js"></script>
+
+</body>
+</html>
